@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/src/TimeSeriesClassification.iml" filepath="$PROJECT_DIR$/src/TimeSeriesClassification.iml" />
-      <module fileurl="file://$PROJECT_DIR$/TimeSeriesClassification1.iml" filepath="$PROJECT_DIR$/TimeSeriesClassification1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/TimeSeriesClassification.iml" filepath="$PROJECT_DIR$/TimeSeriesClassification.iml" />
     </modules>
   </component>
 </project>

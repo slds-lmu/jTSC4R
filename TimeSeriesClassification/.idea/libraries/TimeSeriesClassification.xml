@@ -1,7 +1,15 @@
 <component name="libraryTable">
   <library name="TimeSeriesClassification">
     <CLASSES>
-      <root url="jar://$PROJECT_DIR$/out/artifacts/TimeSeriesClassification_jar/TimeSeriesClassification.jar!/" />
+      <root url="jar://$PROJECT_DIR$/libsvm.jar!/" />
+      <root url="jar://$PROJECT_DIR$/jxl.jar!/" />
+      <root url="jar://$PROJECT_DIR$/jtransforms-2.4.jar!/" />
+      <root url="jar://$PROJECT_DIR$/hppc-0.8.0-SNAPSHOT.jar!/" />
+      <root url="jar://$PROJECT_DIR$/GavinHackCollateResults.jar!/" />
+      <root url="jar://$PROJECT_DIR$/liblinear-java-2.11.jar!/" />
+      <root url="jar://$PROJECT_DIR$/xgboost4j-0.8-SNAPSHOT-jar-with-dependencies.jar!/" />
+      <root url="jar://$PROJECT_DIR$/ResultsProcessing.jar!/" />
+      <root url="jar://$PROJECT_DIR$/SizeOf.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />
