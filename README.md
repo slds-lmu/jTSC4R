@@ -1,4 +1,4 @@
-# Refactoring Time Series Classification for R 
+# Refactoring Java Time Series Classification code for R 
 - original code: https://bitbucket.org/TonyBagnall/time-series-classification/src/default/
 - target R package: https://github.com/compstat-lmu/TSClassification
 
