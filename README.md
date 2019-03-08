@@ -1,7 +1,9 @@
 # Refactoring Time Series Classification for R 
+https://bitbucket.org/TonyBagnall/time-series-classification/src/default/
 https://github.com/compstat-lmu/TSClassification
 
-# Intellij: make sure when project is imported, all dependencies are there, so always import from clean source recursively without iml file
+# Intellij: 
+- make sure when project is imported, all dependencies are there, so always import from clean source recursively without iml file
 - rm -rf .idea
 - rm TimeSeriesClassification.iml
 - rm TimeSeriesClassification/subfolder/.iml
