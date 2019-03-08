@@ -1,6 +1,10 @@
 # Refactoring Time Series Classification for R 
 https://github.com/compstat-lmu/TSClassification
-# Intellij 
+
+# Intellij: make sure when project is imported, all dependencies are there, so always import from clean source recursively without iml file
 - rm -rf .idea
 - rm TimeSeriesClassification.iml
-- rm -rf home/sunxd/Documents/tsc4R/TimeSeriesClassification/src/META-INF/
+- rm TimeSeriesClassification/subfolder/.iml
+- delete TimeSeriesClassification/src/META-INF/  inside Intellij
+- Project Structure/Setting/artifact/jar  ---> click build
+
