@@ -6,5 +6,5 @@ https://github.com/compstat-lmu/TSClassification
 - rm TimeSeriesClassification.iml
 - rm TimeSeriesClassification/subfolder/.iml
 - delete TimeSeriesClassification/src/META-INF/  inside Intellij
-- Project Structure/Setting/artifact/jar  ---> click build
+- Project Structure/Setting/artifact/jar (choose main class MainEntrance(must be searchable)) ---> click build
 
