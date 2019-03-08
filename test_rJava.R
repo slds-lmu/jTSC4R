@@ -1,0 +1,5 @@
+library(rJava)
+.jinit()
+v <- .jnew("java/util/Vector")
+v$add( "foo" )
+v$add( .jnew("java/lang/Double", 10.2 ) )
