@@ -1,6 +1,6 @@
 # Refactoring Time Series Classification for R 
-https://bitbucket.org/TonyBagnall/time-series-classification/src/default/
-https://github.com/compstat-lmu/TSClassification
+- original code: https://bitbucket.org/TonyBagnall/time-series-classification/src/default/
+- target R package: https://github.com/compstat-lmu/TSClassification
 
 # Intellij: 
 - make sure when project is imported, all dependencies are there, so always import from clean source recursively without iml file
