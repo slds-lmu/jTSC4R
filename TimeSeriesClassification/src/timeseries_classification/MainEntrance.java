@@ -15,12 +15,19 @@ public class MainEntrance {
         String train_or_predict =args[0];
         String[] params=Arrays.copyOfRange(args,1,args.length);
         TrainAndPredict trainAndPredict=new TrainAndPredict();
-        if (train_or_predict.equals("train")){
-            trainAndPredict.train(params);
-        }else if (train_or_predict.equals("predict")){
-            trainAndPredict.predict(params);
-        }else{
-            System.out.println("you should enter train or prediction");
+//        if (train_or_predict.equals("train")){
+//            trainAndPredict.train(params);
+//        }else if (train_or_predict.equals("predict")){
+//            trainAndPredict.predict(params);
+//        }
+//        else{
+//            System.out.println("you should enter train or prediction");
+//        }
+        switch (train_or_predict){
+            case "train": trainAndPredict.train(params);break;
+            case "predict" : trainAndPredict.predict(params);break;
+            case "trainWithHyper":trainAndPredict.trainWithHyper(params);break;
+            default:System.out.println("you should enter train or prediction");
         }
 
     }
