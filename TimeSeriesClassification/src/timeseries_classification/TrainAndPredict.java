@@ -99,8 +99,7 @@ public class TrainAndPredict {
      * params[2]: the name of classifiers
      * params[3]: 0- train without cross validation, 1-train with cross validation
      * params[4]: name of method to set the hyperparameter
-     * params[5]: type of hyperparameter
-     * params[6]: value of hyperparameter
+     * params[5]: value of hyperparameter
      * @return the builded classifiers and write to
      */
     public Object trainWithHyper(String[] params) throws IOException {
