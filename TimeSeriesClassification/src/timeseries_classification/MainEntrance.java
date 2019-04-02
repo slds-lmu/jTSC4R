@@ -12,9 +12,9 @@ public class MainEntrance {
      *            arg[2]...:params of train or prediction
      */
     public static void main(String[] args) throws Exception {
-        String train_or_predict =args[0];
+        String request =args[0];
         String[] params=Arrays.copyOfRange(args,1,args.length);
-        TrainAndPredict trainAndPredict=new TrainAndPredict();
+//        TrainAndPredict trainAndPredict=new TrainAndPredict();
 //        if (train_or_predict.equals("train")){
 //            trainAndPredict.train(params);
 //        }else if (train_or_predict.equals("predict")){
@@ -23,12 +23,21 @@ public class MainEntrance {
 //        else{
 //            System.out.println("you should enter train or prediction");
 //        }
-        switch (train_or_predict){
-            case "train": trainAndPredict.train(params);break;
-            case "predict" : trainAndPredict.predict(params);break;
-            case "trainWithHyper":trainAndPredict.trainWithHyper(params);break;
-            default:System.out.println("you should enter train or prediction");
-        }
+//        switch (train_or_predict){
+//            case "train": System.out.println("train");trainAndPredict.train(params);break;
+//            case "predict" : System.out.println("predict");trainAndPredict.predict(params);break;
+//            case "trainWithHyper":System.out.println("trainWithHyper");trainAndPredict.trainWithHyper(params);break;
+//            default:System.out.println("you should enter train or prediction");
+//        }
+
+        HandleChain train = new Train();
+        HandleChain predict = new Predict();
+        HandleChain trainWithHyper = new TrainWithHyper();
+        HandleChain noHandle = new NoHandle();
+        train.setNext(trainWithHyper);
+        trainWithHyper.setNext(predict);
+        predict.setNext(noHandle);
+        train.process(request,params);
 
     }
 }
