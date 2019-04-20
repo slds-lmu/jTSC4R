@@ -12,6 +12,7 @@ package timeseriesweka.classifiers;
 
 import java.io.File;
 import java.io.FileWriter;
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Random;
@@ -31,7 +32,7 @@ import weka.core.Instances;
  * @author Jason Lines (j.lines@uea.ac.uk)
  */
 //public class HiveCote extends AbstractClassifier implements SaveTrainingPredictions{
-public class HiveCote23_7_18 extends AbstractClassifierWithTrainingData implements ContractClassifier{
+public class HiveCote23_7_18 extends AbstractClassifierWithTrainingData implements ContractClassifier,Serializable {
 
 
     private ArrayList<Classifier> classifiers;
@@ -567,7 +568,7 @@ public class HiveCote23_7_18 extends AbstractClassifierWithTrainingData implemen
 
     
     
-    private class ConstituentHiveEnsemble{
+    private class ConstituentHiveEnsemble implements Serializable{
 
         public final Classifier classifier;
         public final double ensembleCvAcc;
@@ -580,7 +581,7 @@ public class HiveCote23_7_18 extends AbstractClassifierWithTrainingData implemen
         }
     }
     
-    public static class DefaultShapeletTransformPlaceholder extends ShapeletTransform{}
+    public static class DefaultShapeletTransformPlaceholder extends ShapeletTransform implements Serializable{}
     
     public static void main(String[] args) throws Exception{
        

@@ -21,7 +21,7 @@ public class TrainWithHyper implements HandleChain{
 
     @Override
     public Object process(String request, String[] params) throws Exception {
-        if(request.equals("trainWithHyper")){
+        if(request.equals("train")&&params.length>4){
             String dataAddress=params[0];
             String moduleAddress=params[1];
             String classiferName=params[2];

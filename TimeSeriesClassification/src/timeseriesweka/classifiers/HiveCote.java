@@ -10,6 +10,7 @@ package timeseriesweka.classifiers;
 
 import java.io.File;
 import java.io.FileWriter;
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Random;
@@ -55,7 +56,7 @@ DEVELOPMENT NOTES for any users added by ajb on 23/7/18:
 * To review: whole file writing thing. 
 
 */
-public class HiveCote extends AbstractClassifierWithTrainingData implements ContractClassifier{
+public class HiveCote extends AbstractClassifierWithTrainingData implements ContractClassifier,Serializable {
 
 
     private ArrayList<Classifier> classifiers;
@@ -648,7 +649,7 @@ public class HiveCote extends AbstractClassifierWithTrainingData implements Cont
 
     
     
-    private class ConstituentHiveEnsemble{
+    private class ConstituentHiveEnsemble implements Serializable{
 
         public final Classifier classifier;
         public final double ensembleCvAcc;
@@ -661,7 +662,7 @@ public class HiveCote extends AbstractClassifierWithTrainingData implements Cont
         }
     }
     
-    public static class DefaultShapeletTransformPlaceholder extends ShapeletTransform{}
+    public static class DefaultShapeletTransformPlaceholder extends ShapeletTransform implements Serializable{}
     
     public static void main(String[] args) throws Exception{
        
