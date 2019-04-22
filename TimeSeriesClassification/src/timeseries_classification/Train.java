@@ -25,6 +25,8 @@ public class Train implements HandleChain {
             String classiferName=params[2];
             String cvFlag = params[3];
             Instances data = ClassifierTools.loadData(dataAddress);  // training data
+            System.out.println(data.toSummaryString());
+            System.out.println(data.toString());
             Object c=null;
             try {
                 Class algorithm=Class.forName(classiferName);  // reflection out the class
