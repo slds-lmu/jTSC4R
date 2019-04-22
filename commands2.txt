@@ -1,0 +1,17 @@
+to activate the avaliable virtual environment of python:
+module load python
+source activate w_env
+which python -- to check the python env
+conda list -- to check the installed package
+
+to create new virtual environment of python:
+module avial python
+module load python
+conda create -n [your venv name] python=3.6
+ource activate [your venv name]
+
+For Jar command:
+Examples:
+java -jar TimeSeriesClassification.jar train /path of train data/GunPoint_TRAIN /path to store trained model/myobj.txt weka.classifiers.meta.RotationForest
+
+java -jar TimeSeriesClassification.jar predict /path where model stores/myobj.txt /path of data to test/GunPoint_TEST

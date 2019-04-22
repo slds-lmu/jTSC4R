@@ -1,0 +1,73 @@
+
+classifier: RotationForest
+Training:
+# flag 0: represent for taining without cross validation. 1: represent for taining with cross validation.
+# java -jar |name of jar file|train |path of training data |path to store classifier |name of classifier |with or without cross validation
+java -jar TimeSeriesClassification.jar train /.../GunPoint_TRAIN /.../classifier.txt weka.classifiers.meta.RotationForest 0
+java -jar TimeSeriesClassification.jar train /.../GunPoint_TRAIN /.../classifier.txt weka.classifiers.meta.RotationForest 1
+
+Prediction:
+# java -jar |name of jar file |predict |path of classifier stored after training |path of test data 
+java -jar TimeSeriesClassification.jar predict /.../classifier.txt /.../GunPoint_TEST
+
+classifier: RandomForest
+Training:
+# flag 0: represent for taining without cross validation. 1: represent for taining with cross validation.
+# java -jar |name of jar file |train |path of training data |path to store classifier |name of classifier |with or without cross validation
+java -jar TimeSeriesClassification.jar train /.../GunPoint_TRAIN /.../classifier.txt weka.classifiers.trees.RandomForest 0
+java -jar TimeSeriesClassification.jar train /.../GunPoint_TRAIN /.../classifier.txt weka.classifiers.trees.RandomForest 1
+
+Prediction:
+# java -jar |name of jar file |predict |path of classifier stored after training |path of test data 
+java -jar TimeSeriesClassification.jar predict /Users/wangyu/Downloads/GunPoint/myobj.txt /.../GunPoint_TEST
+
+classifier: Euclidean_1NN
+Training:
+# flag 0: represent for taining without cross validation. 1: represent for taining with cross validation.
+# java -jar |name of jar file |train |path of training data |path to store classifier |name of classifier |with or without cross validation
+java -jar TimeSeriesClassification.jar train /.../GunPoint_TRAIN /.../classifier.txt timeseriesweka.classifiers.ensembles.elastic_ensemble.ED1NN 0
+java -jar TimeSeriesClassification.jar train /.../GunPoint_TRAIN /.../classifier.txt timeseriesweka.classifiers.ensembles.elastic_ensemble.ED1NN 1
+
+Prediction:
+# java -jar |name of jar file |predict |path of classifier stored after training |path of test data 
+java -jar TimeSeriesClassification.jar predict /.../classifier.txt /.../GunPoint_TEST
+
+classifier: NaiveBayes
+Training:
+# flag 0: represent for taining without cross validation. 1: represent for taining with cross validation.
+# java -jar |name of jar file |train |path of training data |path to store classifier |name of classifier |with or without cross validation
+java -jar TimeSeriesClassification.jar train /.../GunPoint_TRAIN /.../classifier.txt weka.classifiers.bayes.NaiveBayes 0
+java -jar TimeSeriesClassification.jar train /.../GunPoint_TRAIN /.../classifier.txt weka.classifiers.bayes.NaiveBayes 1
+
+Prediction:
+# java -jar |name of jar file |predict |path of classifier stored after training |path of test data 
+java -jar TimeSeriesClassification.jar predict /.../classifier.txt /.../GunPoint_TEST
+
+
+# you can also use these classifier by replacing the name of classifier
+timeseriesweka.classifiers.ensembles.elastic_ensemble.WDTW1NN
+timeseriesweka.classifiers.ensembles.elastic_ensemble.DTW1NN
+timeseriesweka.classifiers.ensembles.elastic_ensemble.ED1NN
+timeseriesweka.classifiers.ensembles.elastic_ensemble.MSM1NN
+timeseriesweka.classifiers.FastShapelets
+timeseriesweka.classifiers.LearnShapelets
+timeseriesweka.classifiers.NN_CID
+timeseriesweka.classifiers.TSBF
+timeseriesweka.classifiers.TSF
+timeseriesweka.classifiers.DTD_C
+timeseriesweka.classifiers.BOSS
+timeseriesweka.classifiers.RISE
+timeseriesweka.classifiers.LPS
+timeseriesweka.classifiers.SAXVSM
+timeseriesweka.classifiers.ShapeletTransformClassifier
+timeseriesweka.classifiers.DD_DTW
+timeseriesweka.classifiers.BagOfPatterns
+weka.classifiers.bayes.BayesNet
+weka.classifiers.bayes.NaiveBayes
+weka.classifiers.functions.Logistic
+weka.classifiers.functions.MultilayerPerceptron
+weka.classifiers.functions.SMO
+weka.classifiers.meta.RotationForest
+vector_classifiers.CAWPE
+weka.classifiers.trees.J48
+weka.classifiers.trees.RandomForest
