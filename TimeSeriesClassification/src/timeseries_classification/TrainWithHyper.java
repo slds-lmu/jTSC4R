@@ -29,7 +29,8 @@ public class TrainWithHyper implements HandleChain{
             String[] hyperparams = params[4].split("_");
 
             Instances data = ClassifierTools.loadData(dataAddress);  // training data
-            System.out.println(data.toSummaryString());
+            ValidateData v = new ValidateData();
+            v.validation(data);
             Object c=null;
             try {
                 Class algorithm=Class.forName(classiferName);  // reflection out the class

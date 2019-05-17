@@ -19,8 +19,8 @@ public class Predict implements HandleChain {
             String moduleAddress =params[0];
             String dataAddress=params[1];
             Instances testData = ClassifierTools.loadData(dataAddress);
-            System.out.println(testData.toSummaryString());
-            System.out.println(testData.toString());
+            ValidateData v = new ValidateData();
+            v.validation(testData);
             Classifier c=null;
             //read obj from file
             FileInputStream fi = new FileInputStream(new File(moduleAddress));
@@ -39,7 +39,7 @@ public class Predict implements HandleChain {
 
             for (double r :
                     results) {
-                System.out.println(r+" ");
+                System.out.print(r+" ");
             }
             return results;
 
