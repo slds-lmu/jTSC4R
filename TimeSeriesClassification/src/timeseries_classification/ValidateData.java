@@ -14,9 +14,9 @@ public class ValidateData {
         }
         for (int i = 0; i < data.numAttributes();i++){
             AttributeStats as = data.attributeStats(i);
-            float percent = Math.round(100.0 * as.missingCount / as.totalCount);
+            int percent = (int) Math.round(100.0 * as.missingCount / as.totalCount);
             if(percent>50){
-                System.err.println(String.format("Warning! The data missing percentage of column %d is %f percent", i+1,percent));
+                System.err.println(String.format("Warning! The data missing percentage of column %d is %d percent", i+1,percent));
                 errFlag = false;
             }
         }
