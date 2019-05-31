@@ -1,5 +1,4 @@
 package timeseries_classification;
-import utilities.ClassifierTools;
 import weka.core.AttributeStats;
 import weka.core.Instances;
 
@@ -27,25 +26,5 @@ public class ValidateData {
         }
         return errFlag;
     }
-
-//    public static void main(String[] args) {
-////        String dataAddress = "/Users/wangyu/Downloads/datasets/bin_train";
-////        String dataAddress = "/Users/wangyu/Downloads/datasets/bin_test";
-////        String dataAddress = "/Users/wangyu/Downloads/datasets/bin_train_nocl";
-////        String dataAddress = "/Users/wangyu/Downloads/datasets/bin_test_nocl";
-////        String dataAddress = "/Users/wangyu/Downloads/datasets/bin_test_nacl";
-////        String dataAddress = "/Users/wangyu/Downloads/datasets/full_na_lab_train";
-////        String dataAddress = "/Users/wangyu/Downloads/datasets/full_na_train";
-////        String dataAddress = "/Users/wangyu/Downloads/datasets/part_na_train";
-////        String dataAddress = "/Users/wangyu/Downloads/datasets/full_na_test";
-////        String dataAddress = "/Users/wangyu/Downloads/datasets/mult_test";
-////        String dataAddress = "/Users/wangyu/Downloads/datasets/mult_train";
-////        String dataAddress = "/Users/wangyu/Downloads/datasets/na_test";
-//        String dataAddress = "/Users/wangyu/Downloads/datasets/na_train";
-//        Instances data = ClassifierTools.loadData(dataAddress);  // training data
-//        System.out.println(data.toSummaryString());
-//        ValidateData v = new ValidateData();
-//        v.validation(data);
-//    }
 
 }

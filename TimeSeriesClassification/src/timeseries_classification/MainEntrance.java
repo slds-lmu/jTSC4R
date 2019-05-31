@@ -23,6 +23,5 @@ public class MainEntrance {
         trainWithHyper.setNext(predict);
         predict.setNext(noHandle);
         train.process(request,params);
-
     }
 }

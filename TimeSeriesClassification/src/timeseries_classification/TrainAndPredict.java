@@ -83,10 +83,6 @@ public class TrainAndPredict {
         double[] results=new double[testData.numInstances()];
         for(int i=0;i<testData.numInstances();i++){
             results[i]=c.classifyInstance(testData.instance(i));}
-//        for (double r:results
-//             ) {
-//            System.out.print(" "+r);
-//        }
         return results;
     }
 

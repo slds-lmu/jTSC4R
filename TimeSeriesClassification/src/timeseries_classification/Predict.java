@@ -1,5 +1,6 @@
 package timeseries_classification;
 
+import scala.None;
 import utilities.ClassifierTools;
 import weka.classifiers.Classifier;
 import weka.core.Instances;
@@ -20,7 +21,7 @@ public class Predict implements HandleChain {
             String dataAddress=params[1];
             Instances testData = ClassifierTools.loadData(dataAddress);
             ValidateData v = new ValidateData();
-            v.validation(testData);
+            boolean f = v.validation(testData);
             Classifier c=null;
             //read obj from file
             FileInputStream fi = new FileInputStream(new File(moduleAddress));
