@@ -19,7 +19,6 @@ public class TrainAndPredict {
      * params[3]: 0- train without cross validation, 1-train with cross validation
      * @return the builded classifiers and write to
      */
-    // TODO: 2019/1/18 according to the length of params to parse some hyper? after that call the buildClassifier method?
     public Object train(String[] params) throws IOException {
         String dataAddress=params[0];
         String moduleAddress=params[1];
