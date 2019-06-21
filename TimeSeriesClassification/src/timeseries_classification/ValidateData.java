@@ -17,15 +17,15 @@ public class ValidateData {
         String name =data.attribute(data.classIndex()).name();
         boolean errFlag = true;
         if (!name.equals("class")&&!name.equals("traget")){
-            System.err.println("Warning! the data don't have class column");
+            System.err.println("Error! the data don't have class column");
             errFlag = false;
 
         }
         for (int i = 0; i < data.numAttributes();i++){
             AttributeStats as = data.attributeStats(i);
             int percent = (int) Math.round(100.0 * as.missingCount / as.totalCount);
-            if(percent>50){
-                System.err.println(String.format("Warning! The data missing percentage of column %d is %d percent", i+1,percent));
+            if(percent>0){
+                System.err.println(String.format("Error! The data missing percentage of column %d is %d percent", i+1,percent));
                 errFlag = false;
             }
         }
