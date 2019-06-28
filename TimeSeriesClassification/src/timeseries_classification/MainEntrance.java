@@ -12,16 +12,18 @@ public class MainEntrance {
      *            arg[2]...:params of train or prediction
      */
     public static void main(String[] args) throws Exception {
-        String request =args[0];
-        String[] params=Arrays.copyOfRange(args,1,args.length);
-
-        HandleChain train = new Train();
-        HandleChain predict = new Predict();
-        HandleChain trainWithHyper = new TrainWithHyper();
-        HandleChain noHandle = new NoHandle();
-        train.setNext(trainWithHyper);
-        trainWithHyper.setNext(predict);
-        predict.setNext(noHandle);
-        train.process(request,params);
+//        String request =args[0];
+//        String[] params=Arrays.copyOfRange(args,1,args.length);
+//
+//        HandleChain train = new Train();
+//        HandleChain predict = new Predict();
+//        HandleChain trainWithHyper = new TrainWithHyper();
+//        HandleChain noHandle = new NoHandle();
+//        train.setNext(trainWithHyper);
+//        trainWithHyper.setNext(predict);
+//        predict.setNext(noHandle);
+//        train.process(request,params);
+        TrainAndPredict tp = new TrainAndPredict();
+        tp.train(args);
     }
 }
