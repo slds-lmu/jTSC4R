@@ -20,7 +20,7 @@ public class Predict implements HandleChain {
             String dataAddress=params[1];
             Instances testData = ClassifierTools.loadData(dataAddress);
             ValidateData v = new ValidateData();
-            boolean f = v.validation(testData);
+            boolean f = v.validationForPrediction(testData);
             Classifier c=null;
             //read obj from file
             FileInputStream fi = new FileInputStream(new File(moduleAddress));

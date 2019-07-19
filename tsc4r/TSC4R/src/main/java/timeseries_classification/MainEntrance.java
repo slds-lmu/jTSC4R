@@ -17,7 +17,7 @@ public class MainEntrance {
      */
     public static void main(String[] args) throws Exception {
         TrainAndPredict tp = new TrainAndPredict();
-//        tp.train(args);
-        tp.predict(args);
+        tp.train(args);
+//        tp.predict(args);
     }
 }

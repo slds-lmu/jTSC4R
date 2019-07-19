@@ -30,7 +30,7 @@ public class TrainWithHyper implements HandleChain{
 
             Instances data = ClassifierTools.loadData(dataAddress);  // training data
             ValidateData v = new ValidateData();
-            v.validation(data);
+            v.validationForTrain(data);
             Object c=null;
             try {
                 Class algorithm=Class.forName(classiferName);  // reflection out the class

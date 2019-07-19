@@ -12,7 +12,7 @@ import java.util.Arrays;
 import java.util.Optional;
 
 public class ValidateData {
-    public boolean validation(Instances data){
+    public boolean validationForTrain(Instances data) throws IOException {
         // check whether data has class column
         String name =data.attribute(data.classIndex()).name();
         boolean errFlag = true;
@@ -31,7 +31,23 @@ public class ValidateData {
         }
 
         if (errFlag == false){
-            System.exit(0);
+            throw new IOException("Error in dataset");
+        }
+        return errFlag;
+    }
+    public boolean validationForPrediction(Instances data) throws IOException {
+        boolean errFlag = true;
+        for (int i = 0; i < data.numAttributes()-1;i++){
+            AttributeStats as = data.attributeStats(i);
+            int percent = (int) Math.round(100.0 * as.missingCount / as.totalCount);
+            if(percent>0){
+                System.err.println(String.format("Error! The data missing percentage of column %d is %d percent", i+1,percent));
+                errFlag = false;
+            }
+        }
+
+        if (errFlag == false){
+            throw new IOException("Error in dataset");
         }
         return errFlag;
     }
@@ -50,7 +66,7 @@ public class ValidateData {
         // test classifier
         Instances test = ClassifierTools.loadData(testData);
         ValidateData v = new ValidateData();
-        boolean f = v.validation(test);
+        boolean f = v.validationForTrain(test);
         Classifier c=null;
 
         //read obj from file
