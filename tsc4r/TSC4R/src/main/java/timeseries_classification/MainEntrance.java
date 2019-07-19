@@ -1,5 +1,4 @@
 package timeseries_classification;
-import java.util.Arrays;
 
 public class MainEntrance {
 
@@ -7,24 +6,18 @@ public class MainEntrance {
     /**
      *
      * @param args:
-     *            arg[0]:name of Algorithms to be applied
-     *            arg[1]:train or prediction
-     *            arg[2]...:params of train or prediction
+     *          args for train:
+     *            args[0]: dataset path
+     *            args[1]: path to store trained classifier
+     *            args[2]: the name of classifier
+     *            args[3]: flag for cross-validation
+     *          args for predict:
+     *            args[0]: dataset path
+     *            args[1]: classifer path
      */
     public static void main(String[] args) throws Exception {
-//        String request =args[0];
-//        String[] params=Arrays.copyOfRange(args,1,args.length);
-//
-//        HandleChain train = new Train();
-//        HandleChain predict = new Predict();
-//        HandleChain trainWithHyper = new TrainWithHyper();
-//        HandleChain noHandle = new NoHandle();
-//        train.setNext(trainWithHyper);
-//        trainWithHyper.setNext(predict);
-//        predict.setNext(noHandle);
-//        train.process(request,params);
         TrainAndPredict tp = new TrainAndPredict();
-        tp.train(args);
 //        tp.train(args);
+        tp.predict(args);
     }
 }

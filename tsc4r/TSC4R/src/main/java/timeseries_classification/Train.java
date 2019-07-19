@@ -2,6 +2,7 @@ package timeseries_classification;
 
 import org.omg.PortableInterceptor.SYSTEM_EXCEPTION;
 import utilities.ClassifierTools;
+import weka.attributeSelection.StartSetHandler;
 import weka.classifiers.Classifier;
 import weka.core.Instances;
 
@@ -19,8 +20,8 @@ public class Train implements HandleChain {
     }
 
     @Override
-    public Object process(String request, String[] params) throws Exception {
-        if(request.equals("train")&&params.length ==4){
+    public Object process(String[] params) throws Exception {
+        if(params.length ==4){
 
             String dataAddress=params[0];
             String moduleAddress=params[1];
@@ -62,7 +63,7 @@ public class Train implements HandleChain {
             return c;
 
         }else {
-            Object o = nextInChain.process(request,params);
+            Object o = nextInChain.process(params);
             return o;
         }
     }
