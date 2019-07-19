@@ -25,7 +25,8 @@ public class ValidateData {
             AttributeStats as = data.attributeStats(i);
             int percent = (int) Math.round(100.0 * as.missingCount / as.totalCount);
             if(percent>0){
-                System.err.println(String.format("Error! The data missing percentage of column %d is %d percent", i+1,percent));
+                String n = data.attribute(i).name();
+                System.err.println(String.format("Error! The data missing percentage of column %s is %d percent", n,percent));
                 errFlag = false;
             }
         }
@@ -41,7 +42,8 @@ public class ValidateData {
             AttributeStats as = data.attributeStats(i);
             int percent = (int) Math.round(100.0 * as.missingCount / as.totalCount);
             if(percent>0){
-                System.err.println(String.format("Error! The data missing percentage of column %d is %d percent", i+1,percent));
+                String n = data.attribute(i).name();
+                System.err.println(String.format("Error! The data missing percentage of column %s is %d percent", n,percent));
                 errFlag = false;
             }
         }

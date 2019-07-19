@@ -1,11 +1,13 @@
 package timeseries_classification;
 
+import sun.util.locale.provider.FallbackLocaleProviderAdapter;
 import utilities.ClassifierTools;
 import weka.classifiers.Classifier;
 import weka.core.Instances;
 
 import java.io.File;
 import java.io.FileOutputStream;
+import java.io.IOException;
 import java.io.ObjectOutputStream;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
@@ -40,8 +42,10 @@ public class TrainWithHyper implements HandleChain{
                 for (int i = 0; i<hyperparams.length; ){
                     // get the method name to set specific hyper params
                     String methodName = hyperparams[i];
+                    boolean findFlag = false;
                     for (Method method : methods){
                         if(method.getName().equals(methodName)){
+                            findFlag = true;
                             Type[] types=method.getParameterTypes();
                             for (Type type : types){
                                 switch (type.getTypeName()){
@@ -66,7 +70,11 @@ public class TrainWithHyper implements HandleChain{
                             }
                         }
                     }
-                    i++;
+                    if (findFlag == false){
+                        System.err.println(String.format("Cannot find methods:%s",methodName));
+                        throw new IOException("Cannot find method");
+                    }
+                    i = i + 2;
                 }
                 Method builderClassifier=algorithm.getMethod("buildClassifier",data.getClass());
                 // buidClassifier is a method shared across TSC
