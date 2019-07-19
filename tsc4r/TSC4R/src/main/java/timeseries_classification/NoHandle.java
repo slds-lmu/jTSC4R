@@ -7,7 +7,7 @@ public class NoHandle implements HandleChain {
     }
 
     @Override
-    public Object process(String request, String[] params) throws Exception {
+    public Object process(String[] params) throws Exception {
         System.out.println("There is no such algorithm");
         return null;
     }

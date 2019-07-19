@@ -51,7 +51,7 @@ public class Train implements HandleChain {
             }
             if(cvFlag.equals("1")){
                 double[][] a=ClassifierTools.crossValidationWithStats((Classifier) c,data, 10);
-                System.out.println("ROTF ACC = "+a[0][0]);
+                System.out.println("Cross-Validation ACC = "+a[0][0]);
             }
 
             //write obj to file

@@ -20,8 +20,8 @@ public class TrainWithHyper implements HandleChain{
     }
 
     @Override
-    public Object process(String request, String[] params) throws Exception {
-        if(request.equals("train")&&params.length>4){
+    public Object process(String[] params) throws Exception {
+        if(params.length>4){
             String dataAddress=params[0];
             String moduleAddress=params[1];
             String classiferName=params[2];
@@ -84,7 +84,7 @@ public class TrainWithHyper implements HandleChain{
             }
             if(cvFlag.equals("1")){
                 double[][] a=ClassifierTools.crossValidationWithStats((Classifier) c,data, 10);
-                System.out.println("ROTF ACC = "+a[0][0]);
+                System.out.println("Cross_Validation ACC = "+a[0][0]);
             }
 
             //write obj to file
@@ -96,7 +96,7 @@ public class TrainWithHyper implements HandleChain{
             return c;
 
         }else {
-            Object o = nextInChain.process(request,params);
+            Object o = nextInChain.process(params);
             return o;
         }
     }

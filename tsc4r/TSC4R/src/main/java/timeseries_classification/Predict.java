@@ -15,8 +15,7 @@ public class Predict implements HandleChain {
     }
 
     @Override
-    public Object process(String request, String[] params) throws Exception {
-        if(request.equals("predict")){
+    public Object process(String[] params) throws Exception {
             String moduleAddress =params[0];
             String dataAddress=params[1];
             Instances testData = ClassifierTools.loadData(dataAddress);
@@ -37,16 +36,6 @@ public class Predict implements HandleChain {
             for(int i=0;i<testData.numInstances();i++){
                 results[i]=c.classifyInstance(testData.instance(i));
             }
-
-            for (double r :
-                    results) {
-                System.out.print(r+" ");
-            }
             return results;
-
-        }else{
-            Object o = nextInChain.process(request,params);
-            return o;
-        }
     }
 }

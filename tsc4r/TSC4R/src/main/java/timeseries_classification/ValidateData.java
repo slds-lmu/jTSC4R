@@ -16,7 +16,7 @@ public class ValidateData {
         // check whether data has class column
         String name =data.attribute(data.classIndex()).name();
         boolean errFlag = true;
-        if (!name.equals("class")&&!name.equals("traget")){
+        if (!name.equals("class")&&!name.equals("target")){
             System.err.println("Error! the data don't have class column");
             errFlag = false;
 
@@ -45,7 +45,7 @@ public class ValidateData {
         String[] paramsForTrain=Arrays.copyOfRange(params,0,4);
         System.out.println();
         HandleChain train = new Train();
-        train.process("train",paramsForTrain);
+        train.process(paramsForTrain);
 
         // test classifier
         Instances test = ClassifierTools.loadData(testData);
