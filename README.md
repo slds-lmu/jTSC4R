@@ -1,4 +1,4 @@
-# Time Series Classification in R 
+# Java Time Series Classification code to use in R 
 This repo is the java backend of our R package for Time Series Classification: https://github.com/compstat-lmu/TSClassification
 
 We adapt the following repository with Author's permission: https://github.com/TonyBagnall/uea-tsc.git
